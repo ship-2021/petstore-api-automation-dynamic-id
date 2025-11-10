@@ -34,6 +34,7 @@ public class ApiUtils {
     public static Response post(String endpoint, Object body) {
         return given()
                 .header("Content-Type", "application/json") // Set request content type
+                .header("api_key", ConfigManager.getApiKey())
                 .body(body) // Set request body
                 .post(endpoint); // Execute POST request
     }
@@ -48,6 +49,7 @@ public class ApiUtils {
     public static Response get(String endpoint) {
         return given()
                 .header("Content-Type", "application/json")
+                .header("api_key", ConfigManager.getApiKey())
                 .get(endpoint); // Execute GET request
     }
 
@@ -62,9 +64,12 @@ public class ApiUtils {
     public static Response put(String endpoint, Object body) {
         return given()
                 .header("Content-Type", "application/json")
+                .header("api_key", ConfigManager.getApiKey()) // ensure API key is sent
                 .body(body)
-                .put(endpoint); // Execute PUT request
+                .put(endpoint);
     }
+
+
 
     /**
      * Sends a DELETE request to the given endpoint.

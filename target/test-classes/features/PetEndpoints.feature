@@ -8,8 +8,8 @@ Feature: Validate Swagger PetStore API
     Then the pet status should be "sold"
     When I retrieve the pet by ID
     Then the retrieved pet should match the updated pet
-    When I delete the pet
-    Then retrieving the pet should return 404
+    When I delete the pet I just created
+    Then retrieving that pet should return 404
 
 
   Scenario: Find pets by status

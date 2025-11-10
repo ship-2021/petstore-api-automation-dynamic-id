@@ -71,7 +71,7 @@ mvn clean test
 
 ```
 target/cucumber-report.html
-```
+Log File: target/logs/petstore-api.log (tracks creation, updates, retrievals, and deletions)```
 
 ---
 
