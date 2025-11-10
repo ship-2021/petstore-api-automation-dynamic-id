@@ -1,0 +1,6 @@
+com\petstore\config\ConfigManager.class
+com\petstore\models\Pet.class
+com\petstore\utils\ApiUtils.class
+com\petstore\api\ApiUtils.class
+com\petstore\models\ErrorResponse.class
+com\petstore\utils\DataGenerator.class
