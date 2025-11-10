@@ -109,11 +109,16 @@ public class PetSteps {
      */
     @After
     public void cleanup() {
-        try {
-            ApiUtils.delete("/pet/" + pet.getId());
-        } catch (Exception e) {
-            // ignore if already deleted or not found
-            e.printStackTrace();
+        if (pet != null) { // only attempt deletion if pet exists
+            try {
+                ApiUtils.delete("/pet/" + pet.getId());
+                System.out.println("Deleted pet with ID: " + pet.getId());
+            } catch (Exception e) {
+                // ignore if already deleted or not found
+                e.printStackTrace();
+            } finally {
+                pet = null; // clear reference after cleanup
+            }
         }
-    }
-}
+    }}
+
